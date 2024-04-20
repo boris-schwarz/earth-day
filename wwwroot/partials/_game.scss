@@ -1,0 +1,11 @@
+.game {
+	@include full-screen;
+
+	> [class*="game__"] {
+		@include full-screen;
+		position: absolute;
+
+		@import 'game_background';
+		@import 'game_foreground';
+	}
+}

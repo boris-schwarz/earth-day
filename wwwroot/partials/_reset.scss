@@ -1,0 +1,13 @@
+html, body {
+	@include full-screen;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+}
+* {
+	color: var(--color-white);
+	font-family: "Jersey 10", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+	text-transform: uppercase;
+}

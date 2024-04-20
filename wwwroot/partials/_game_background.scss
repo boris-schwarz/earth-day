@@ -1,0 +1,39 @@
+&.game__background {
+	@include deep-space-gradient;
+	filter: blur(1px);
+
+	[class*="wave--"] {
+		@include deep-space-gradient;
+		height: calc(var(--screen-height) * 2);
+		mask: var(--mask);
+		opacity: 0.9;
+		position: absolute;
+		transform-origin: top center;
+		width: var(--screen-width);
+
+		&.wave--1 {
+			transform: rotateZ(-3deg) scaleX(1.2) translateY(-33vh);
+			--mask:
+				radial-gradient(23.85vw at 50% 33vw,#000 100%,#0000 100%) calc(50% - 40vw) 0/80vw 100%,
+				radial-gradient(23.85vw at 50% -13vw,#0000 100%,#000 100%) 50% 20vw/80vw 100% repeat-x;
+		}
+		&.wave--2 {
+			transform: rotateZ(4deg) scaleX(1.2) translateY(-1vh);
+			--mask:
+				radial-gradient(33.54vw at 50% 45vw,#000 99%,#0000 101%) calc(50% - 30vw) 0/60vw 100%,
+				radial-gradient(33.54vw at 50% -30vw,#0000 99%,#000 101%) 50% 15vw/60vw 100% repeat-x;
+		}
+		&.wave--3 {
+			transform: rotateZ(-15deg) scaleX(1.5) translateY(20vh);
+			--mask:
+				radial-gradient(33.54vw at 50% 45vw,#000 99%,#0000 101%) calc(50% - 30vw) 0/60vw 100%,
+				radial-gradient(33.54vw at 50% -30vw,#0000 99%,#000 101%) 50% 15vw/60vw 100% repeat-x;
+		}
+		&.wave--4 {
+			transform: rotateZ(-7deg) scaleX(1.9) translateY(50vh);
+			--mask:
+				radial-gradient(33.54vw at 50% 45vw,#000 99%,#0000 101%) calc(50% - 30vw) 0/60vw 100%,
+				radial-gradient(33.54vw at 50% -30vw,#0000 99%,#000 101%) 50% 15vw/60vw 100% repeat-x;
+		}
+	}
+}

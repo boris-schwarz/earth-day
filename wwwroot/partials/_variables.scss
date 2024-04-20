@@ -1,0 +1,23 @@
+/* variables */
+:root {
+	--screen-height: 100dvh;
+	--screen-width: 100vw;
+
+	--color-black: #190B28;
+	--color-white: #FAFAFF;
+	--color-blue: #3C91E6;
+	--color-blue-dark: #1c456e;
+	--color-green: #5EFC8D;
+	--color-brown: #877666;
+}
+
+/* mixins */
+@mixin full-screen {
+	height: var(--screen-height);
+	width: var(--screen-width);
+}
+
+@mixin deep-space-gradient {
+	background-color: var(--color-black);
+	background-image: radial-gradient(ellipse at center bottom, var(--color-blue-dark), var(--color-black));
+}

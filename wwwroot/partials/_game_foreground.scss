@@ -1,0 +1,48 @@
+&.game__foreground {
+	[class*="star--"] {
+		/* animation: star-shine 1s infinite alternate; */
+		background-color: var(--color-white);
+		border-radius: 50%;
+		height: 1vh;
+		position: absolute;
+		width: 1vh;
+		// @for $i from 1 through 20 {
+		// 	&.star--#{$i} {
+		// 		// animation-delay: random(500) + ms;
+		// 		left: random(99) + vw;
+		// 		opacity: random();
+		// 		top: random(99) + vh;
+		// 	}
+		// }
+		// generated this and i liked it:
+		&.star--1{left:26vw;opacity:.317840006;top:53vh}
+		&.star--2{left:11vw;opacity:.8631188661;top:8vh}
+		&.star--3{left:89vw;opacity:.258156875;top:34vh}
+		&.star--4{left:74vw;opacity:.2594767651;top:64vh}
+		&.star--5{left:32vw;opacity:.9547721045;top:67vh}
+		&.star--6{left:86vw;opacity:.728227549;top:6vh}
+		&.star--7{left:7vw;opacity:.9031742649;top:15vh}
+		&.star--8{left:76vw;opacity:.8409433376;top:59vh}
+		&.star--9{left:96vw;opacity:.608885048;top:52vh}
+		&.star--10{left:78vw;opacity:.7492249933;top:74vh}
+		&.star--11{left:26vw;opacity:.3681734654;top:40vh}
+		&.star--12{left:5vw;opacity:.7267037973;top:15vh}
+		&.star--13{left:16vw;opacity:.4067839385;top:48vh}
+		&.star--14{left:68vw;opacity:.5843930509;top:15vh}
+		&.star--15{left:15vw;opacity:.2201221047;top:53vh}
+		&.star--16{left:32vw;opacity:.6783812307;top:87vh}
+		&.star--17{left:30vw;opacity:.0783996167;top:5vh}
+		&.star--18{left:10vw;opacity:.5302191676;top:30vh}
+		&.star--19{left:83vw;opacity:.409574775;top:22vh}
+		&.star--20{left:62vw;opacity:.5129851018;top:20vh}
+	}
+
+	/* @keyframes star-shine {
+		0% {
+			filter:	blur(1px);
+		}
+		100% {
+			filter:	blur(1.5px);
+		}
+	} */
+}

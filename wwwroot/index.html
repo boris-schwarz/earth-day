@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>EARTH RESC</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="/earth-day.css">
+	</head>
+	<body>
+		<!-- game -->
+		<div class="game">
+			<div class="game__background">
+				<div class="wave--1"></div>
+				<div class="wave--2"></div>
+				<div class="wave--3"></div>
+				<div class="wave--4"></div>
+			</div>
+			<div class="game__foreground">
+				<div class="star--1"></div>
+				<div class="star--2"></div>
+				<div class="star--3"></div>
+				<div class="star--4"></div>
+				<div class="star--5"></div>
+				<div class="star--6"></div>
+				<div class="star--7"></div>
+				<div class="star--8"></div>
+				<div class="star--9"></div>
+				<div class="star--10"></div>
+				<div class="star--11"></div>
+				<div class="star--12"></div>
+				<div class="star--13"></div>
+				<div class="star--14"></div>
+				<div class="star--15"></div>
+				<div class="star--16"></div>
+				<div class="star--17"></div>
+				<div class="star--18"></div>
+				<div class="star--19"></div>
+				<div class="star--20"></div>
+			</div>
+			<div class="game__earth"></div>
+		</div>
+
+		<!-- hud -->
+		<div class="hud">
+			<!-- hud: game menu -->
+			<div class="hud__menu">
+				<h1>Earth resc</h1>
+				<label for="deforestation">Start game</label>
+			</div>
+
+			<!-- hud: goals -->
+			<div class="hud__goals">
+				<input type="checkbox" autocomplete="off" id="deforestation"> [deforestation]
+				<input type="checkbox" autocomplete="off" id="oil_spill"> [oil_spill]
+				<input type="checkbox" autocomplete="off" id="plastic_waste"> [plastic_waste]
+				<input type="checkbox" autocomplete="off" id="overfishing"> [overfishing]
+				<input type="checkbox" autocomplete="off" id="too_many_greenhouse_gases"> [too_many_greenhouse_gases]
+				<input type="checkbox" autocomplete="off" id="too_many_people"> [too_many_people]
+			</div>
+
+			<!-- hud: actions -->
+			<div class="hud__actions">
+				<div class="action--deforestation">
+					<h2>Deforestation</h2>
+					<p>There are too many trees being felled. Replant trees and negotiate a yearly contingent for a healthy forestry.</p>
+					<label for="oil_spill">Take action</label>
+				</div>
+				<div class="action--oil_spill">
+					<h2>Oil spill</h2>
+					<p>An oil spill happened, quickly! There's little time to prevent the oil carpet from spreading and saving as many animals as possible.</p>
+					<label for="plastic_waste">Take action</label>
+				</div>
+			</div>
+
+			<!-- hud: notifications -->
+			<div class="hud__notifications">
+				<div class="notification--deforestation">
+					<h2>Deforestation</h2>
+					<p>You signed long-term contracts with governments that include contingents as well as incentives for education about forestry. You also invested in campaigns for awareness and now more people are buying product from companies that invest into re-forestation.</p>
+					<label for="oil_spill">Continue</label>
+				</div>
+			</div>
+
+		</div>
+	</body>
+</html>

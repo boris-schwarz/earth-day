@@ -1,0 +1,75 @@
+/* global / game stopped */
+.hud {
+	@include full-screen;
+	box-shadow: inset 0px 0px 0px 2px red;
+	display: block;
+	left: 0;
+	position: fixed;
+	top: 0;
+	.hud__menu {
+		@include full-screen;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+
+	}
+	.hud__goals {
+		left: 2vh;
+		top: 2vh;
+		opacity: 0.3;
+		position: fixed;
+	}
+	.hud__actions {
+		> [class*="action--"] {
+			bottom: 1vh;
+			background-color: var(--color-blue);
+			display: none;
+			left: 50%;
+			max-width: 50vw;
+			padding: 1vh 0;
+			position: fixed;
+			transform: translateX(-50%);
+			h2 {
+				margin: 0;
+			}
+		}
+	}
+	.hud__notifications {
+		> [class*="notification--"] {
+			bottom: 1vh;
+			background-color: var(--color-green);
+			display: none;
+			left: 50%;
+			max-width: 50vw;
+			padding: 1vh 0;
+			position: fixed;
+			transform: translateX(-50%);
+			h2 {
+				margin: 0;
+			}
+		}
+	}
+	label {
+		background-color: var(--color-black);
+		cursor: pointer;
+		padding: 1vh;
+		&:hover {
+			background-color: var(--color-blue-dark);
+		}
+	}
+}
+
+/* game running */
+.hud:has(input[type="checkbox"]:checked) {
+	box-shadow: inset 0px 0px 0px 2px green;
+	.hud__menu {
+		display: none;
+	}
+}
+
+.hud:has(input[type="checkbox"][id="deforestation"]:checked) {
+	.hud__actions .action--deforestation {
+		display: block;
+	}
+}
