@@ -2,3 +2,10 @@
 @import 'partials/reset';
 @import 'partials/game';
 @import 'partials/hud';
+
+/* game running */
+body:has(input[type="checkbox"]:checked) {
+	.game__earth {
+		display: flex;
+	}
+}

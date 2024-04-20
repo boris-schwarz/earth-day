@@ -8,6 +8,7 @@
 	--color-blue: #3C91E6;
 	--color-blue-dark: #1c456e;
 	--color-green: #5EFC8D;
+	--color-green-dark: #369352;
 	--color-brown: #877666;
 }
 
@@ -20,4 +21,17 @@
 @mixin deep-space-gradient {
 	background-color: var(--color-black);
 	background-image: radial-gradient(ellipse at center bottom, var(--color-blue-dark), var(--color-black));
+}
+
+@mixin notification-box {
+	bottom: -100%;
+	left: 50%;
+	max-width: 50vw;
+	padding: 1vh 0;
+	position: fixed;
+	transform: translateX(-50%);
+	transition: bottom 400ms;
+	h2 {
+		margin: 0;
+	}
 }

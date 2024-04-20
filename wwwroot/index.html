@@ -40,7 +40,44 @@
 				<div class="star--19"></div>
 				<div class="star--20"></div>
 			</div>
-			<div class="game__earth"></div>
+			<div class="game__earth">
+				<div class="earth">
+					<div class="countries">
+						<!-- americas -->
+						<div class="country--1"></div>
+						<div class="country--2"></div>
+						<div class="country--3"></div>
+						<div class="country--4"></div>
+						<div class="country--5"></div>
+						<div class="country--6"></div>
+						<div class="country--7"></div>
+
+						<!-- europe -->
+						<div class="country--8"></div>
+						<div class="country--9"></div>
+						<div class="country--10"></div>
+
+						<!-- africa -->
+						<div class="country--11"></div>
+						<div class="country--12"></div>
+						<div class="country--13"></div>
+						<div class="country--14"></div>
+
+						<!-- greenland and the poles -->
+						<div class="country--15"></div>
+						<div class="country--16"></div>
+						<div class="country--17"></div>
+					</div>
+					<div class="clouds">
+						<div class="cloud--1"></div>
+						<div class="cloud--2"></div>
+						<div class="cloud--3"></div>
+						<div class="cloud--4"></div>
+						<div class="cloud--5"></div>
+						<div class="cloud--6"></div>
+					</div>
+				</div>
+			</div>
 		</div>
 
 		<!-- hud -->
@@ -48,17 +85,41 @@
 			<!-- hud: game menu -->
 			<div class="hud__menu">
 				<h1>Earth resc</h1>
-				<label for="deforestation">Start game</label>
+				<label for="deforestation_happening">Start game</label>
 			</div>
 
 			<!-- hud: goals -->
 			<div class="hud__goals">
-				<input type="checkbox" autocomplete="off" id="deforestation"> [deforestation]
-				<input type="checkbox" autocomplete="off" id="oil_spill"> [oil_spill]
-				<input type="checkbox" autocomplete="off" id="plastic_waste"> [plastic_waste]
-				<input type="checkbox" autocomplete="off" id="overfishing"> [overfishing]
-				<input type="checkbox" autocomplete="off" id="too_many_greenhouse_gases"> [too_many_greenhouse_gases]
-				<input type="checkbox" autocomplete="off" id="too_many_people"> [too_many_people]
+				<div>
+					[deforestation]
+					<input type="checkbox" autocomplete="off" id="deforestation_happening"> [happening]
+					<input type="checkbox" autocomplete="off" id="deforestation_solved"> [solved]
+				</div>
+				<div>
+					[oil_spill]
+					<input type="checkbox" autocomplete="off" id="oil_spill_happening"> [happening]
+					<input type="checkbox" autocomplete="off" id="oil_spill_solved"> [solved]
+				</div>
+				<div>
+					[plastic_waste]
+					<input type="checkbox" autocomplete="off" id="plastic_waste_happening"> [happening]
+					<input type="checkbox" autocomplete="off" id="plastic_waste_solved"> [solved]
+				</div>
+				<div>
+					[overfishing]
+					<input type="checkbox" autocomplete="off" id="overfishing_happening"> [happening]
+					<input type="checkbox" autocomplete="off" id="overfishing_solved"> [solved]
+				</div>
+				<div>
+					[too_many_greenhouse_gases]
+					<input type="checkbox" autocomplete="off" id="too_many_greenhouse_gases_happening"> [happening]
+					<input type="checkbox" autocomplete="off" id="too_many_greenhouse_gases_solved"> [solved]
+				</div>
+				<div>
+					[too_many_people]
+					<input type="checkbox" autocomplete="off" id="too_many_people_happening"> [happening]
+					<input type="checkbox" autocomplete="off" id="too_many_people_solved"> [solved]
+				</div>
 			</div>
 
 			<!-- hud: actions -->
@@ -66,21 +127,21 @@
 				<div class="action--deforestation">
 					<h2>Deforestation</h2>
 					<p>There are too many trees being felled. Replant trees and negotiate a yearly contingent for a healthy forestry.</p>
-					<label for="oil_spill">Take action</label>
+					<label for="deforestation_solved">Take action</label>
 				</div>
 				<div class="action--oil_spill">
 					<h2>Oil spill</h2>
 					<p>An oil spill happened, quickly! There's little time to prevent the oil carpet from spreading and saving as many animals as possible.</p>
-					<label for="plastic_waste">Take action</label>
+					<label for="oil_spill_solved">Take action</label>
 				</div>
 			</div>
 
 			<!-- hud: notifications -->
 			<div class="hud__notifications">
 				<div class="notification--deforestation">
-					<h2>Deforestation</h2>
+					<h2>Well done!</h2>
 					<p>You signed long-term contracts with governments that include contingents as well as incentives for education about forestry. You also invested in campaigns for awareness and now more people are buying product from companies that invest into re-forestation.</p>
-					<label for="oil_spill">Continue</label>
+					<label for="oil_spill_happening">Continue</label>
 				</div>
 			</div>
 

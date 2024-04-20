@@ -21,41 +21,32 @@
 		position: fixed;
 	}
 	.hud__actions {
+		/* @include full-screen;
+		left: 0;
+		position: absolute;
+		top: 0; */
 		> [class*="action--"] {
-			bottom: 1vh;
-			background-color: var(--color-blue);
-			display: none;
-			left: 50%;
-			max-width: 50vw;
-			padding: 1vh 0;
-			position: fixed;
-			transform: translateX(-50%);
-			h2 {
-				margin: 0;
-			}
+			background-color: var(--color-black);
+			@include notification-box;
 		}
 	}
 	.hud__notifications {
+		/* @include full-screen;
+		left: 0;
+		position: absolute;
+		top: 0; */
 		> [class*="notification--"] {
-			bottom: 1vh;
-			background-color: var(--color-green);
-			display: none;
-			left: 50%;
-			max-width: 50vw;
-			padding: 1vh 0;
-			position: fixed;
-			transform: translateX(-50%);
-			h2 {
-				margin: 0;
-			}
+			background-color: var(--color-blue-dark);
+			@include notification-box;
 		}
 	}
 	label {
-		background-color: var(--color-black);
+		background-color: var(--color-green);
+		color: var(--color-black);
 		cursor: pointer;
-		padding: 1vh;
+		padding: 1vh 2vh;
 		&:hover {
-			background-color: var(--color-blue-dark);
+			background-color: var(--color-green-dark);
 		}
 	}
 }
@@ -68,8 +59,26 @@
 	}
 }
 
-.hud:has(input[type="checkbox"][id="deforestation"]:checked) {
+/* deforestation */
+.hud:has(input[type="checkbox"][id="deforestation_happening"]:checked):not(:has(input[type="checkbox"][id="deforestation_solved"]:checked)) {
 	.hud__actions .action--deforestation {
-		display: block;
+		bottom: 1vh;
+	}
+}
+.hud:has(input[type="checkbox"][id="deforestation_solved"]:checked):not(:has(input[type="checkbox"][id="oil_spill_happening"]:checked)) {
+	.hud__notifications .notification--deforestation {
+		bottom: 1vh;
+	}
+}
+
+/* oil_spill */
+.hud:has(input[type="checkbox"][id="oil_spill_happening"]:checked):not(:has(input[type="checkbox"][id="oil_spill_solved"]:checked)) {
+	.hud__actions .action--oil_spill {
+		bottom: 1vh;
+	}
+}
+.hud:has(input[type="checkbox"][id="oil_spill_solved"]:checked) {
+	.hud__notifications .notification--oil_spill {
+		bottom: 1vh;
 	}
 }
