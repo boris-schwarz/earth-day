@@ -4,7 +4,7 @@
 @import 'partials/hud';
 
 /* game running */
-body:has(input[type="checkbox"]:checked) {
+body:has(.hud__goals input[type="checkbox"]:checked) {
 	.game__earth {
 		display: flex;
 	}
