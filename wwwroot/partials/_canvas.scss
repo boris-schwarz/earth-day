@@ -1,0 +1,19 @@
+.canvas {
+	@include full-screen;
+
+	> [class*="canvas__"] {
+		@include full-screen;
+		position: absolute;
+
+		@import 'canvas_background';
+		@import 'canvas_foreground';
+		@import 'canvas_earth';
+	}
+}
+
+/* game running */
+.state:has(.state__bool [id="state_intro"]:checked) {
+	.canvas__earth {
+		display: flex;
+	}
+}

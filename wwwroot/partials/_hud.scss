@@ -21,64 +21,108 @@
 		position: fixed;
 	}
 	.hud__actions {
-		/* @include full-screen;
-		left: 0;
-		position: absolute;
-		top: 0; */
-		> [class*="action--"] {
-			background-color: var(--color-black);
+		@include full-screen;
+		pointer-events: none;
+		> [class*="action__"] {
 			@include notification-box;
+			animation-direction: normal;
+			/* animation-duration: 15s; */
+			animation-duration: 15s;
+			animation-iteration-count: 1;
+			animation-timing-function: linear;
+			background-color: var(--color-black);
+			display: grid; grid-auto-rows: 1fr; //xxx
+			pointer-events: all;
+			.action--description,
+			.action--failed {
+				min-width: 100%;
+			}
 		}
 	}
 	.hud__notifications {
-		/* @include full-screen;
-		left: 0;
-		position: absolute;
-		top: 0; */
+		@include full-screen;
+		pointer-events: none;
+		> [class*="notification__"] {
+			@include notification-box;
+			animation-direction: normal;
+			/* animation-duration: 15s; */
+			animation-duration: 5s;
+			animation-iteration-count: 1;
+			animation-timing-function: linear;
+			background-color: var(--color-blue-dark);
+			pointer-events: all;
+		}
+	}
+	/* .hud__notifications {
 		> [class*="notification--"] {
 			background-color: var(--color-blue-dark);
 			@include notification-box;
 		}
-	}
-	label {
+	} */
+	label,
+	a.restart {
 		background-color: var(--color-green);
 		color: var(--color-black);
 		cursor: pointer;
+		display: inline-block;
 		padding: 1vh 2vh;
+		text-decoration: none;
 		&:hover {
 			background-color: var(--color-green-dark);
 		}
 	}
 }
 
+/* snackbar animations */
+@keyframes persistent-snackbar {
+	0% {
+		transform: translate(-50%, 100%);
+	}
+	100% {
+		transform: translate(-50%, 0);
+	}
+}
+
+@keyframes critical-snackbar {
+	0% {
+		transform: translate(-50%, 100%);
+	}
+	6%, 79% {
+		transform: translate(-50%, 50%);
+	}
+	80% {
+		background-color: var(--color-brown);
+		clip-path: inset(0 0 0 0);
+		transform: translate(-50%, 0);
+	}
+	80.01%, 100% {
+		background-color: red;
+		clip-path: inset(50% 0 0 0);
+		transform: translate(-50%, 0);
+	}
+}
+
 /* game running */
-.hud:has(input[type="checkbox"]:checked) {
+.state:has(.state__bool [id="state_intro"]:checked) {
 	box-shadow: inset 0px 0px 0px 2px green;
 	.hud__menu {
 		display: none;
 	}
 }
 
-/* deforestation */
-.hud:has(input[type="checkbox"][id="deforestation_happening"]:checked):not(:has(input[type="checkbox"][id="deforestation_solved"]:checked)) {
-	.hud__actions .action--deforestation {
-		bottom: 1vh;
-	}
-}
-.hud:has(input[type="checkbox"][id="deforestation_solved"]:checked):not(:has(input[type="checkbox"][id="oil_spill_happening"]:checked)) {
-	.hud__notifications .notification--deforestation {
-		bottom: 1vh;
+/* intro */
+.state:has(.state__bool [id="state_intro"]:checked):not(:has(input[id="state_deforestation_happening"]:checked)) {
+	.hud__actions .action__intro {
+		animation-fill-mode: forwards;
+		animation-duration: 1s;
+		animation-name: persistent-snackbar;
 	}
 }
 
-/* oil_spill */
-.hud:has(input[type="checkbox"][id="oil_spill_happening"]:checked):not(:has(input[type="checkbox"][id="oil_spill_solved"]:checked)) {
-	.hud__actions .action--oil_spill {
-		bottom: 1vh;
-	}
-}
-.hud:has(input[type="checkbox"][id="oil_spill_solved"]:checked) {
-	.hud__notifications .notification--oil_spill {
-		bottom: 1vh;
+/* deforestation */
+.state:has(.state__bool [id="state_deforestation_happening"]:checked):not(:has(input[id="state_deforestation_solved"]:checked)) {
+	.hud__actions .action__deforestation {
+		animation-fill-mode: forwards;
+		animation-name: critical-snackbar;
 	}
 }

@@ -1,4 +1,4 @@
-&.game__earth {
+&.canvas__earth {
 	display: none;
 	justify-content: center;
 	align-items: center;
@@ -25,7 +25,7 @@
 				&.country--2  { grid-column: 1 / span 4;	grid-row: 3; }
 				&.country--3  { grid-column: 2;						grid-row: 5; }
 				&.country--4  { grid-column: 3;						grid-row: 6; }
-				&.country--5  { grid-column: 4 / span 2;	grid-row: 6 / span 2; }
+				&.country--5  { grid-column: 4 / span 2;	grid-row: 6 / span 3; }
 				&.country--6  { grid-column: 5 / span 2;	grid-row: 7; }
 				&.country--7  { grid-column: 5;						grid-row: 7 / span 3; }
 
@@ -44,8 +44,7 @@
 			}
 		}
 		.clouds {
-			animation: cloud-computing-hehe 30s linear infinite;
-			animation-direction: alternate;
+			/* animation: cloud-computing 30s linear alternate infinite; */
 			display: grid;
 			grid-template-columns: 25% 25% 25% 25% 25% 25% 25% 25%;
 			grid-template-rows: 25% 25% 25% 25%;
@@ -56,8 +55,9 @@
 			> [class*="cloud--"] {
 				background-color: var(--color-white);
 				border-radius: calc(80vmin / 20);
-				opacity: 0.25;
-				&.cloud--1 { grid-column: 1 / span 2;	grid-row: 1; }
+				opacity: 0.25; // this caused too much lag
+				will-change: transform;
+				&.cloud--1 { grid-column: 1 / span 3;	grid-row: 1; }
 				&.cloud--2 { grid-column: 5 / span 3;	grid-row: 1; }
 				&.cloud--3 { grid-column: 8;					grid-row: 2; }
 				&.cloud--4 { grid-column: 2 / span 4;	grid-row: 3; }
@@ -65,12 +65,12 @@
 				&.cloud--6 { grid-column: 7 / span 2;	grid-row: 4; }
 			}
 
-			@keyframes cloud-computing-hehe {
-				0% {
-					left: 0;
+			@keyframes cloud-computing {
+				from {
+					transform: translateX(0);
 				}
-				100% {
-					left: -100%;
+				to {
+					transform: translateX(-100%);
 				}
 			}
 		}

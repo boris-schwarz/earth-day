@@ -1,0 +1,7 @@
+.state {
+	@include full-screen;
+	> .state__bool {
+		position: fixed;
+		z-index: 99999;
+	}
+}

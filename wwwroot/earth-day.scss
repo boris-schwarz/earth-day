@@ -1,11 +1,5 @@
 @import 'partials/variables';
 @import 'partials/reset';
-@import 'partials/game';
+@import 'partials/state';
+@import 'partials/canvas';
 @import 'partials/hud';
-
-/* game running */
-body:has(.hud__goals input[type="checkbox"]:checked) {
-	.game__earth {
-		display: flex;
-	}
-}
