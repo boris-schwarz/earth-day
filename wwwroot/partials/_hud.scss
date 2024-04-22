@@ -1,7 +1,6 @@
 /* global / game stopped */
 .hud {
 	@include full-screen;
-	box-shadow: inset 0px 0px 0px 2px red;
 	display: block;
 	left: 0;
 	position: fixed;
@@ -65,7 +64,7 @@
 		color: var(--color-black);
 		cursor: pointer;
 		display: inline-block;
-		padding: 1vh 2vh;
+		padding: 2vmin 3vmin;
 		text-decoration: none;
 		&:hover {
 			background-color: var(--color-green-dark);
@@ -104,9 +103,11 @@
 
 /* game running */
 .state:has(.state__bool [id="state_intro"]:checked) {
-	box-shadow: inset 0px 0px 0px 2px green;
-	.hud__menu {
-		display: none;
+	.hud {
+		box-shadow: inset 0px 0px 0px 2px green;
+		.hud__menu {
+			display: none;
+		}
 	}
 }
 
