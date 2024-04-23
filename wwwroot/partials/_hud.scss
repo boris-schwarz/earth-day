@@ -5,66 +5,131 @@
 	left: 0;
 	position: fixed;
 	top: 0;
+
+	/* start menu */
 	.hud__menu {
 		@include full-screen;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-
 	}
+
+	/* settings */
+	.hud__settings {
+		@include full-screen;
+		pointer-events: none;
+		.settings__animations {
+			background-color: var(--color-green);
+			border-radius: 50%;
+			bottom: 1vw;
+			display: block;
+			height: 40px;
+			left: 1vw;
+			padding: 0;
+			position: fixed;
+			pointer-events: all;
+			width: 40px;
+			[class*="icon--line--"] {
+				background-color: var(--color-black);
+				height: 2px;
+				position: absolute;
+				right: 55%;
+				transform: translateY(-1px);
+			}
+			.icon--line--1 { top: 40%; width: 40%; }
+			.icon--line--2 { top: 50%; width: 30%; }
+			.icon--line--3 { top: 60%; width: 20%; }
+			.icon--circle {
+				border: 2px solid var(--color-black);
+				border-radius: 50%;
+				border-width: 2px;
+				height: 30%;
+				position: absolute;
+				right: 10%;
+				transform: translateY(-50%);
+				top: 50%;
+				width: 30%;
+			}
+			.icon--disabled {
+				display: none;
+				background-color: var(--color-green);
+				height: 2px;
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%) rotateZ(-45deg);
+				width: 100%;
+			}
+		}
+	}
+
+	/* goals (hidden, enabled for debugging) */
 	.hud__goals {
 		left: 2vh;
 		top: 2vh;
 		opacity: 0.3;
 		position: fixed;
 	}
+
+	/* actions */
 	.hud__actions {
 		@include full-screen;
 		pointer-events: none;
 		> [class*="action__"] {
 			@include notification-box;
 			animation-direction: normal;
-			/* animation-duration: 15s; */
 			animation-duration: 15s;
 			animation-iteration-count: 1;
 			animation-timing-function: linear;
 			background-color: var(--color-black);
-			display: grid; grid-auto-rows: 1fr; //xxx
+			display: grid; grid-auto-rows: 1fr;
 			pointer-events: all;
 			.action--description,
 			.action--failed {
 				min-width: 100%;
+				> h2 {
+					margin-top: 8px;
+				}
+			}
+			.action__progress {
+				animation-duration: 15s;
+				animation-iteration-count: 1;
+				animation-fill-mode: forwards;
+				animation-timing-function: linear;
+				background-color: var(--color-green);
+				height: 4px;
+				left: 0;
+				position: absolute;
+				top: 0;
+				width: 0%;
 			}
 		}
 	}
+
+	/* notifications */
 	.hud__notifications {
 		@include full-screen;
 		pointer-events: none;
 		> [class*="notification__"] {
 			@include notification-box;
 			animation-direction: normal;
-			/* animation-duration: 15s; */
-			animation-duration: 5s;
+			animation-duration: 1s;
+			animation-fill-mode: forwards;
 			animation-iteration-count: 1;
 			animation-timing-function: linear;
 			background-color: var(--color-blue-dark);
 			pointer-events: all;
 		}
 	}
-	/* .hud__notifications {
-		> [class*="notification--"] {
-			background-color: var(--color-blue-dark);
-			@include notification-box;
-		}
-	} */
+
+	/* global hud elements */
 	label,
 	a.restart {
 		background-color: var(--color-green);
 		color: var(--color-black);
 		cursor: pointer;
 		display: inline-block;
-		padding: 2vmin 3vmin;
+		padding: 1rem 3rem;
 		text-decoration: none;
 		&:hover {
 			background-color: var(--color-green-dark);
@@ -74,10 +139,10 @@
 
 /* snackbar animations */
 @keyframes persistent-snackbar {
-	0% {
+	from {
 		transform: translate(-50%, 100%);
 	}
-	100% {
+	to {
 		transform: translate(-50%, 0);
 	}
 }
@@ -86,28 +151,48 @@
 	0% {
 		transform: translate(-50%, 100%);
 	}
-	6%, 79% {
+	6%, 78% {
+		transform: translate(-50%, 50%);
+	}
+	79% {
+		clip-path: inset(0 0 0 0);
 		transform: translate(-50%, 50%);
 	}
 	80% {
 		background-color: var(--color-brown);
-		clip-path: inset(0 0 0 0);
+		clip-path: inset(50% 0 0 0);
 		transform: translate(-50%, 0);
 	}
-	80.01%, 100% {
-		background-color: red;
+	81%, 100% {
+		background-color: var(--color-red);
 		clip-path: inset(50% 0 0 0);
 		transform: translate(-50%, 0);
 	}
 }
 
-/* game running */
-.state:has(.state__bool [id="state_intro"]:checked) {
-	.hud {
-		box-shadow: inset 0px 0px 0px 2px green;
-		.hud__menu {
-			display: none;
+@keyframes snackbar-progress {
+	from { width: 0%; }
+	to { width: 100%; }
+}
+
+
+/* state: settings */
+.state:has(.state__bool [id="state_animations"]:not(:checked)) {
+	.settings__animations {
+		background-color: var(--color-black);
+		[class*="icon--"] {
+			background-color: var(--color-white);
 		}
+		.icon--disabled {
+			display: block;
+		}
+	}
+}
+
+/* state: game running */
+.state:has(.state__bool [id="state_intro"]:checked) {
+	.hud__menu {
+		display: none;
 	}
 }
 
@@ -125,5 +210,13 @@
 	.hud__actions .action__deforestation {
 		animation-fill-mode: forwards;
 		animation-name: critical-snackbar;
+	}
+	.hud__actions .action__deforestation .action__progress {
+		animation-name: snackbar-progress;
+	}
+}
+.state:has(.state__bool [id="state_deforestation_happening"]:checked):has(input[id="state_deforestation_solved"]:checked) {
+	.hud__notifications .notification__deforestation {
+		animation-name: persistent-snackbar;
 	}
 }

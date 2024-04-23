@@ -11,9 +11,21 @@
 	}
 }
 
-/* game running */
+/* state: game running */
 .state:has(.state__bool [id="state_intro"]:checked) {
 	.canvas__earth {
 		display: flex;
+	}
+}
+
+/* state: animations */
+.state:has(.state__bool [id="state_animations"]:checked) {
+	.canvas__earth .clouds {
+		animation-name: cloud-computing;
+	}
+}
+.state:has(.state__bool [id="state_animations"]:checked) {
+	.canvas__foreground [class*="star--"] {
+		animation-name: star-shine;
 	}
 }

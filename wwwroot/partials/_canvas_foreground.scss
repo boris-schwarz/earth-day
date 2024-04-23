@@ -1,19 +1,17 @@
 &.canvas__foreground {
 	[class*="star--"] {
-		/* animation: star-shine 1s infinite alternate; */
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
 		background-color: var(--color-white);
 		border-radius: 50%;
 		height: 1vh;
 		position: absolute;
 		width: 1vh;
-		// @for $i from 1 through 20 {
-		// 	&.star--#{$i} {
-		// 		// animation-delay: random(500) + ms;
-		// 		left: random(99) + vw;
-		// 		opacity: random();
-		// 		top: random(99) + vh;
-		// 	}
-		// }
+		@for $i from 1 through 20 {
+			&.star--#{$i} {
+				animation-delay:412ms; animation-duration:2s
+			}
+		}
 		// generated this and i liked it:
 		&.star--1{left:26vw;opacity:.317840006;top:53vh}
 		&.star--2{left:11vw;opacity:.8631188661;top:8vh}
@@ -37,12 +35,12 @@
 		&.star--20{left:62vw;opacity:.5129851018;top:20vh}
 	}
 
-	/* @keyframes star-shine {
+	@keyframes star-shine {
 		0% {
-			filter:	blur(1px);
+			filter:	blur(0px);
 		}
 		100% {
-			filter:	blur(1.5px);
+			filter:	blur(2.5px);
 		}
-	} */
+	}
 }
