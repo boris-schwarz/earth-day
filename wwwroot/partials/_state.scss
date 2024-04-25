@@ -1,11 +1,25 @@
 .state {
 	@include full-screen;
 	> .state__bool {
-		/* display: none;
-		pointer-events: none; */
-		font-size: 12px;
-		position: fixed;
-		z-index: 99999;
+		display: none;
+		pointer-events: none;
+		&.debug {
+			display: block;
+			font-size: 13px;
+			line-height: 13px;
+			position: fixed;
+			z-index: 99999;
+			hr {
+				margin: 0;
+			}
+			input {
+				margin: 0;
+				height: 13px;
+				pointer-events: all;
+				vertical-align: bottom;
+				width: 13px;
+			}
+		}
 	}
 }
 

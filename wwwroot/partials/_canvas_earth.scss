@@ -104,7 +104,7 @@
 
 				/* plasticwaste  */
 				&[class^="happening__plasticwaste--"] {
-					background-color: var(--color-red);
+					background-color: var(--color-white);
 					clip-path: polygon(10% 1%, 10% 99%, 90% 99%, 90% 1%, 75% 1%, 75% 33%, 25% 33%, 25% 1%);
 				}
 				&.happening__plasticwaste--1  { grid-column: 3;	grid-row: 5; }
@@ -114,7 +114,10 @@
 				&.happening__plasticwaste--5  { grid-column: 4;	grid-row: 5; }
 
 				/* overfishing  */
-				&[class^="happening__overfishing--"] { background-color: var(--color-white); clip-path: polygon(10% 25%, 35% 25%, 35% 0%, 65% 0%, 65% 25%, 90% 25%, 90% 50%, 65% 50%, 65% 100%, 35% 100%, 35% 50%, 10% 50%); }
+				&[class^="happening__overfishing--"] {
+					background-color: var(--color-red);
+					clip-path: polygon(0% 52%, 18% 52%, 26% 21%, 66% 21%, 71% 40%, 100% 41%, 97% 60%, 87% 75%, 75% 85%, 64% 79%, 55% 86%, 45% 78%, 35% 85%, 26% 76%, 17% 85%, 8% 79%, 0 86%);
+				}
 				&.happening__overfishing--1  { grid-column: 3;	grid-row: 7; }
 				&.happening__overfishing--2  { grid-column: 2;	grid-row: 6; }
 				&.happening__overfishing--3  { grid-column: 7;	grid-row: 3; }
@@ -137,7 +140,7 @@
 
 				/* overpopulation */
 				&[class^="happening__overpopulation--"] {
-					background-color: var(--color-black);
+					background-color: var(--color-pink);
 					clip-path: polygon(50% 0, 26% 8%, 18% 28%, 25% 46%, 32% 53%, 0 58%, 11% 78%, 29% 74%, 14% 100%, 41% 100%, 45% 88%, 52% 87%, 55% 100%, 85% 100%, 69% 72%, 91% 78%, 100% 57%, 65% 52%, 71% 46%, 80% 26%, 71% 8%);
 				}
 				&.happening__overpopulation--1  { grid-column: 10;	grid-row: 6; }

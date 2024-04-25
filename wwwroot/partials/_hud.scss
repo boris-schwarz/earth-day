@@ -26,12 +26,12 @@
 			border-radius: 50%;
 			bottom: 1vw;
 			display: block;
-			height: 10vw;
+			height: 3.1rem;
 			left: 1vw;
 			padding: 0;
 			position: fixed;
 			pointer-events: all;
-			width: 10vw;
+			width: 3.1rem;
 			[class*="icon--line--"] {
 				background-color: var(--color-black);
 				height: 2px;
@@ -88,10 +88,24 @@
 			pointer-events: all;
 			.action--description,
 			.action--failed {
+				/* display: flex;
+				flex-wrap: wrap; */
 				min-width: 100%;
-				> h2 {
+				/* > h2 {
+					flex-grow: 2;
 					margin-top: 8px;
+					order: 1;
 				}
+				> label,
+				> a.restart {
+					clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%);
+					flex-grow: 0;
+					order: 2;
+				}
+				> p {
+					order: 3;
+					width: 100%;;
+				} */
 			}
 			.action__progress {
 				animation-duration: 15s;
@@ -131,7 +145,7 @@
 		color: var(--color-black);
 		cursor: pointer;
 		display: inline-block;
-		padding: 1rem 3rem;
+		padding: 1rem 1.5rem;
 		text-decoration: none;
 		&:hover {
 			background-color: var(--color-green-dark);

@@ -2,13 +2,8 @@
 <!DOCTYPE html>
 <!--
 	TODO
-	[ ] add 16x16 characters and icons
-	[ ] write texts
+	[ ] add 16x16 svg characters and icons
 	[ ] better positioning for action buttons on mobile and desktop that takes little space
-	[x] add animations for happenings
-	[x] properly time game-over animation
-	[x] increase general font size
-	[x] add <b> to action descriptions
 -->
 <html lang="en">
 	<head>
@@ -30,64 +25,63 @@
 	</head>
 	<body>
 		<div class="state">
-
 			<div class="state__bool">
 				<hr>
 				[animations]
-				<input type="checkbox" autocomplete="on" id="state_animations" checked> toggle
+				<input type="checkbox" autocomplete="on" id="state_animations" checked>
 
 				<hr>
 				[intro]
-				<input type="checkbox" autocomplete="off" id="state_intro"> game started
+				<input type="checkbox" autocomplete="off" id="state_intro">
 
 				<hr>
 				[deforestation]
-				<input type="checkbox" autocomplete="off" id="state_deforestation_happening"> happening
+				<input type="checkbox" autocomplete="off" id="state_deforestation_happening"> |
 				<input type="checkbox" autocomplete="off" id="state_deforestation_solved_1">
 				<input type="checkbox" autocomplete="off" id="state_deforestation_solved_2">
-				<input type="checkbox" autocomplete="off" id="state_deforestation_solved_3"> solved
+				<input type="checkbox" autocomplete="off" id="state_deforestation_solved_3">
 
 				<hr>
 				[oilspill]
-				<input type="checkbox" autocomplete="off" id="state_oilspill_happening"> happening
+				<input type="checkbox" autocomplete="off" id="state_oilspill_happening"> |
 				<input type="checkbox" autocomplete="off" id="state_oilspill_solved_1">
 				<input type="checkbox" autocomplete="off" id="state_oilspill_solved_2">
 				<input type="checkbox" autocomplete="off" id="state_oilspill_solved_3">
-				<input type="checkbox" autocomplete="off" id="state_oilspill_solved_4"> solved
+				<input type="checkbox" autocomplete="off" id="state_oilspill_solved_4">
 
 				<hr>
 				[plasticwaste]
-				<input type="checkbox" autocomplete="off" id="state_plasticwaste_happening"> happening
+				<input type="checkbox" autocomplete="off" id="state_plasticwaste_happening"> |
 				<input type="checkbox" autocomplete="off" id="state_plasticwaste_solved_1">
 				<input type="checkbox" autocomplete="off" id="state_plasticwaste_solved_2">
 				<input type="checkbox" autocomplete="off" id="state_plasticwaste_solved_3">
 				<input type="checkbox" autocomplete="off" id="state_plasticwaste_solved_4">
-				<input type="checkbox" autocomplete="off" id="state_plasticwaste_solved_5"> solved
+				<input type="checkbox" autocomplete="off" id="state_plasticwaste_solved_5">
 
 				<hr>
 				[overfishing]
-				<input type="checkbox" autocomplete="off" id="state_overfishing_happening"> happening
+				<input type="checkbox" autocomplete="off" id="state_overfishing_happening"> |
 				<input type="checkbox" autocomplete="off" id="state_overfishing_solved_1">
 				<input type="checkbox" autocomplete="off" id="state_overfishing_solved_2">
 				<input type="checkbox" autocomplete="off" id="state_overfishing_solved_3">
 				<input type="checkbox" autocomplete="off" id="state_overfishing_solved_4">
 				<input type="checkbox" autocomplete="off" id="state_overfishing_solved_5">
-				<input type="checkbox" autocomplete="off" id="state_overfishing_solved_6"> solved
+				<input type="checkbox" autocomplete="off" id="state_overfishing_solved_6">
 
 				<hr>
 				[greenhousegases]
-				<input type="checkbox" autocomplete="off" id="state_greenhousegases_happening"> happening
+				<input type="checkbox" autocomplete="off" id="state_greenhousegases_happening"> |
 				<input type="checkbox" autocomplete="off" id="state_greenhousegases_solved_1">
 				<input type="checkbox" autocomplete="off" id="state_greenhousegases_solved_2">
 				<input type="checkbox" autocomplete="off" id="state_greenhousegases_solved_3">
 				<input type="checkbox" autocomplete="off" id="state_greenhousegases_solved_4">
 				<input type="checkbox" autocomplete="off" id="state_greenhousegases_solved_5">
 				<input type="checkbox" autocomplete="off" id="state_greenhousegases_solved_6">
-				<input type="checkbox" autocomplete="off" id="state_greenhousegases_solved_7"> solved
+				<input type="checkbox" autocomplete="off" id="state_greenhousegases_solved_7">
 
 				<hr>
 				[overpopulation]
-				<input type="checkbox" autocomplete="off" id="state_overpopulation_happening"> happening
+				<input type="checkbox" autocomplete="off" id="state_overpopulation_happening"> |
 				<input type="checkbox" autocomplete="off" id="state_overpopulation_solved_1">
 				<input type="checkbox" autocomplete="off" id="state_overpopulation_solved_2">
 				<input type="checkbox" autocomplete="off" id="state_overpopulation_solved_3">
@@ -95,11 +89,11 @@
 				<input type="checkbox" autocomplete="off" id="state_overpopulation_solved_5">
 				<input type="checkbox" autocomplete="off" id="state_overpopulation_solved_6">
 				<input type="checkbox" autocomplete="off" id="state_overpopulation_solved_7">
-				<input type="checkbox" autocomplete="off" id="state_overpopulation_solved_8"> solved
+				<input type="checkbox" autocomplete="off" id="state_overpopulation_solved_8">
 
 				<hr>
 				[win]
-				<input type="checkbox" autocomplete="off" id="state_win_happening"> win
+				<input type="checkbox" autocomplete="off" id="state_win_happening">
 			</div>
 
 			<!-- canvas -->
@@ -229,7 +223,7 @@
 					<div class="action__intro">
 						<div class="action--description">
 							<h2>Welcome</h2>
-							<p>You've been chosen to __TODO__, but don't worry: I will aid you in your cause!</p>
+							<p>You've been chosen to <b>rescue the earth</b> from climate change, but don't worry: I will aid you in your cause! There's a long road ahead of us.</p>
 							<label for="state_deforestation_happening">Let's go!</label>
 						</div>
 					</div>
@@ -248,68 +242,68 @@
 					<div class="action__oilspill">
 						<div class="action--description">
 							<h2>Oil spill</h2>
-							<p>An oil spill happened, quickly! There's little time to prevent the oil carpet from spreading and saving as many animals as possible.</p>
+							<p>Oil drilling sites, oil cargo ships and refineries have created <b>oil carpets</b>. Quickly, clean them up!</p>
 							<div class="action__progress"></div>
 						</div>
 						<div class="action--failed">
 							<h2>That took too long!</h2>
-							<p>Unfortunately, Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque culpa minima repellat repudiandae aliquam quibusdam ea, maxime quod, illum non maiores id eos architecto reprehenderit, dolor accusantium impedit blanditiis hic.</p>
+							<p>Unfortunately, birds and mammals were coated in oil, losing their insulation and being poisoned. Entire biomes have fouled and humans developed heart problems and other illnesses. </p>
 							<a href="./" class="restart">Re-start game</a>
 						</div>
 					</div>
 					<div class="action__plasticwaste">
 						<div class="action--description">
-							<h2>plasticwaste</h2>
-							<p>An oil spill happened, quickly! There's little time to prevent the oil carpet from spreading and saving as many animals as possible.</p>
+							<h2>Plastic waste</h2>
+							<p>The rapidly <b>increasing plastic production</b> pollutes our oceans. Quickly, find a solution!</p>
 							<div class="action__progress"></div>
 						</div>
 						<div class="action--failed">
 							<h2>That took too long!</h2>
-							<p>Unfortunately, Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque culpa minima repellat repudiandae aliquam quibusdam ea, maxime quod, illum non maiores id eos architecto reprehenderit, dolor accusantium impedit blanditiis hic.</p>
+							<p>Unfortunately, marine wildlife suffered greatly, groundwater was poisoned and giant plastic carpets have formed in the oceans. Microparticles is now found in many species' bodies, including humans.</p>
 							<a href="./" class="restart">Re-start game</a>
 						</div>
 					</div>
 					<div class="action__overfishing">
 						<div class="action--description">
-							<h2>overfishing</h2>
-							<p>An oil spill happened, quickly! There's little time to prevent the oil carpet from spreading and saving as many animals as possible.</p>
+							<h2>Overfishing</h2>
+							<p>The rising demand for fish leads to <b>overfished oceans</b>. Quickly, reduce it!</p>
 							<div class="action__progress"></div>
 						</div>
 						<div class="action--failed">
 							<h2>That took too long!</h2>
-							<p>Unfortunately, Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque culpa minima repellat repudiandae aliquam quibusdam ea, maxime quod, illum non maiores id eos architecto reprehenderit, dolor accusantium impedit blanditiis hic.</p>
+							<p>Unfortunately, the change in biodiversity affected entire ecosystems, leading to poorer water quality, leading to poorer air quality. Entire species are on the brink of extinction because they get caught unintentionally.</p>
 							<a href="./" class="restart">Re-start game</a>
 						</div>
 					</div>
 					<div class="action__greenhousegases">
 						<div class="action--description">
-							<h2>greenhousegases</h2>
-							<p>An oil spill happened, quickly! There's little time to prevent the oil carpet from spreading and saving as many animals as possible.</p>
+							<h2>Greenhouse gases</h2>
+							<p>More and more <b>greenhouse gas is emitted</b>. Quickly, stop it!</p>
 							<div class="action__progress"></div>
 						</div>
 						<div class="action--failed">
 							<h2>That took too long!</h2>
-							<p>Unfortunately, Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque culpa minima repellat repudiandae aliquam quibusdam ea, maxime quod, illum non maiores id eos architecto reprehenderit, dolor accusantium impedit blanditiis hic.</p>
+							<p>Unfortunately, the world is now warming faster, leading to more drastic climate changes, giving most of the species too little time to adapt.</p>
 							<a href="./" class="restart">Re-start game</a>
 						</div>
 					</div>
 					<div class="action__overpopulation">
 						<div class="action--description">
-							<h2>overpopulation</h2>
-							<p>An oil spill happened, quickly! There's little time to prevent the oil carpet from spreading and saving as many animals as possible.</p>
+							<h2>Overpopulation</h2>
+							<p>More and more <b>people</b> are being born. Quickly, what can we do?</p>
 							<div class="action__progress"></div>
 						</div>
 						<div class="action--failed">
 							<h2>That took too long!</h2>
-							<p>Unfortunately, Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque culpa minima repellat repudiandae aliquam quibusdam ea, maxime quod, illum non maiores id eos architecto reprehenderit, dolor accusantium impedit blanditiis hic.</p>
+							<p>Unfortunately, we caused all the previous problems, but in greater scales. Humanity is now suffering food shortages, unstable governments and wars.</p>
 							<a href="./" class="restart">Re-start game</a>
 						</div>
 					</div>
 					<div class="action__win">
 						<div class="action--description">
 							<h2>You won!</h2>
-						<p>You faced all the challenges and helped the human in front of the screen remembering taking care of our planet!</p>
-						<a href="./" class="restart">Play again</a>
+							<p>You faced all the challenges and helped the human in front of the screen remembering taking care of our planet!</p>
+							<a href="./" class="restart">Play again</a>
 						</div>
 					</div>
 				</div>
@@ -318,32 +312,32 @@
 				<div class="hud__notifications">
 					<div class="notification__deforestation">
 						<h2>Well done!</h2>
-						<p>You signed long-term contracts with governments that include contingents as well as incentives for education about forestry. You also invested in campaigns for awareness leading to more people buying from companies that invest into reforestation.</p>
+						<p>You signed <b>long-term contracts</b> with governments that include contingents as well as incentives for <b>education</b> about forestry. You also invested in <b>campaigns for awareness</b> leading to more people buying from companies that invest into reforestation.</p>
 						<label for="state_oilspill_happening">Continue</label>
 					</div>
 					<div class="notification__oilspill">
-						<h2>oilspill solved</h2>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis minima quos cumque odit voluptatum, doloribus sint maiores itaque obcaecati. Tenetur ab eos debitis officia, voluptates inventore blanditiis explicabo ipsum mollitia.</p>
+						<h2>Well done!</h2>
+						<p>You <b>created barriers</b> to prevent spreading into sensitive areas and removed the oil using <b>skimming boats</b> and other tools, such as chemical dispersants and fire.</p>
 						<label for="state_plasticwaste_happening">Continue</label>
 					</div>
 					<div class="notification__plasticwaste">
-						<h2>plasticwaste solved</h2>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis minima quos cumque odit voluptatum, doloribus sint maiores itaque obcaecati. Tenetur ab eos debitis officia, voluptates inventore blanditiis explicabo ipsum mollitia.</p>
+						<h2>Well done!</h2>
+						<p>You collected marine debris with <b>ocean clean-up ships</b> and negotiated with governments to <b>introduce laws</b> that at least 75% of plastic packaging has to be <b>recycled</b>.</p>
 						<label for="state_overfishing_happening">Continue</label>
 					</div>
 					<div class="notification__overfishing">
-						<h2>overfishing solved</h2>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis minima quos cumque odit voluptatum, doloribus sint maiores itaque obcaecati. Tenetur ab eos debitis officia, voluptates inventore blanditiis explicabo ipsum mollitia.</p>
+						<h2>Well done!</h2>
+						<p>You introduced <b>marine protected areas</b> and once again negotiated with governments to introduce <b>sustainable fishing quotas</b> and regulations. Starting campaigns for <b>responsible consumption</b> lead to more people buying certified seafood.</p>
 						<label for="state_greenhousegases_happening">Continue</label>
 					</div>
 					<div class="notification__greenhousegases">
-						<h2>greenhousegases solved</h2>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis minima quos cumque odit voluptatum, doloribus sint maiores itaque obcaecati. Tenetur ab eos debitis officia, voluptates inventore blanditiis explicabo ipsum mollitia.</p>
+						<h2>Well done!</h2>
+						<p>You introduced <b>solar- and wind-energy</b> worldwide and invested heavily into <b>research</b> of sustainable energy production. You also greatly improved <b>public transportation</b> and bicycle lanes, leading to less vehicles on the road.</p>
 						<label for="state_overpopulation_happening">Continue</label>
 					</div>
 					<div class="notification__overpopulation">
-						<h2>overpopulation solved</h2>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis minima quos cumque odit voluptatum, doloribus sint maiores itaque obcaecati. Tenetur ab eos debitis officia, voluptates inventore blanditiis explicabo ipsum mollitia.</p>
+						<h2>Well done!</h2>
+						<p>You successfully started an <b>interplanetary colonization program</b>, leading to more space on earth and unlocking new resources on the <b>Red Planet</b>.</p>
 						<label for="state_win_happening">Continue</label>
 					</div>
 				</div>
