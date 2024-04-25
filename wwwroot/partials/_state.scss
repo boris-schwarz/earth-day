@@ -39,54 +39,64 @@
 	}
 }
 
-/* deforestation happening */
-.state:has(.state__bool [id="state_deforestation_happening"]:checked):has(
-	input[id^="state_deforestation_solved_"]:not(:checked)
-) {
-	.canvas__earth {
-		.happenings {
-			[class^="happening__forest--"] {
-				animation-name: happening-occurs;
+
+@each $happening, $successor, $amount in $happenings {
+	/* #{$happening} happening */
+	.state:has(.state__bool [id="state_#{$happening}_happening"]:checked):has(
+		input[id^="state_#{$happening}_solved_"]:not(:checked)
+	) {
+		.canvas__earth {
+			.happenings {
+				[class^="happening__#{$happening}--"] {
+					animation-name: happening-occurs;
+				}
 			}
 		}
+		.hud__actions .action__#{$happening} {
+			animation-fill-mode: forwards;
+			animation-name: critical-snackbar;
+		}
+		.hud__actions .action__#{$happening} .action__progress {
+			animation-name: snackbar-progress;
+		}
 	}
-	.hud__actions .action__deforestation {
-		animation-fill-mode: forwards;
-		animation-name: critical-snackbar;
+
+	/* #{$happening} solving */
+	@for $i from 1 through $amount {
+		.state:has(.state__bool [id="state_#{$happening}_happening"]:checked):has(
+			input[id="state_#{$happening}_solved_#{$i}"]:checked
+		) { label[for="state_#{$happening}_solved_#{$i}"] { display: none; } }
 	}
-	.hud__actions .action__deforestation .action__progress {
-		animation-name: snackbar-progress;
+
+	/* #{$happening} solved */
+	$condition: '';
+	@for $i from 1 through $amount {
+		$condition: $condition + ':has(input[id="state_#{$happening}_solved_#{$i}"]:checked)';
+	}
+	.state:has(.state__bool [id="state_#{$happening}_happening"]:checked)#{$condition}:not(:has(
+		input[id="state_#{$successor}_happening"]:checked
+	)) {
+		.hud__notifications .notification__#{$happening} {
+			animation-name: persistent-snackbar;
+		}
 	}
 }
 
-/* deforestatoin solving */
-.state:has(.state__bool [id="state_deforestation_happening"]:checked):has(
-	input[id="state_deforestation_solved_1"]:checked
-) { label[for="state_deforestation_solved_1"] { display: none; } }
-.state:has(.state__bool [id="state_deforestation_happening"]:checked):has(
-	input[id="state_deforestation_solved_2"]:checked
-) { label[for="state_deforestation_solved_2"] { display: none; } }
-.state:has(.state__bool [id="state_deforestation_happening"]:checked):has(
-	input[id="state_deforestation_solved_3"]:checked
-) { label[for="state_deforestation_solved_3"] { display: none; } }
-
-/* deforestation solved */
-.state:has(.state__bool [id="state_deforestation_happening"]:checked):has(
-	input[id="state_deforestation_solved_1"]:checked
-):has(
-	input[id="state_deforestation_solved_2"]:checked
-):has(
-	input[id="state_deforestation_solved_3"]:checked
-):not(:has(
-	input[id="state_oilspill_happening"]:checked
-)) {
-	.hud__notifications .notification__deforestation {
+/* won the game */
+.state:has(.state__bool [id="state_win_happening"]:checked) {
+	.hud__actions .action__win {
+		animation-duration: 1s;
 		animation-name: persistent-snackbar;
+		animation-fill-mode: forwards;
 	}
 }
+
+
+
+
 
 /* oilspill happening */
-.state:has(.state__bool [id="state_oilspill_happening"]:checked):has(
+/* .state:has(.state__bool [id="state_oilspill_happening"]:checked):has(
 	input[id^="state_oilspill_solved_"]:not(:checked)
 ) {
 	.hud__actions .action__oilspill {
@@ -96,4 +106,4 @@
 	.hud__actions .action__oilspill .action__progress {
 		animation-name: snackbar-progress;
 	}
-}
+} */

@@ -1,4 +1,13 @@
-/* variables */
+$happenings: (
+	"deforestation" "oilspill" 3,
+	"oilspill" "plasticwaste" 4,
+	"plasticwaste" "overfishing" 5,
+	"overfishing" "greenhousegases" 6,
+	"greenhousegases" "overpopulation" 7,
+	"overpopulation" "win" 8
+);
+
+/* css variables */
 :root {
 	--screen-height: 100dvh;
 	--screen-width: 100vw;

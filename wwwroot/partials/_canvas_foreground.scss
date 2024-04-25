@@ -7,31 +7,26 @@
 		height: 1vh;
 		position: absolute;
 		width: 1vh;
-		@for $i from 1 through 20 {
-			&.star--#{$i} {
-				animation-delay:412ms; animation-duration:2s
-			}
-		}
-		// generated this and i liked it:
-		&.star--1{left:26vw;opacity:.317840006;top:53vh}
-		&.star--2{left:11vw;opacity:.8631188661;top:8vh}
-		&.star--3{left:89vw;opacity:.258156875;top:34vh}
-		&.star--4{left:74vw;opacity:.2594767651;top:64vh}
-		&.star--5{left:32vw;opacity:.9547721045;top:67vh}
-		&.star--6{left:86vw;opacity:.728227549;top:6vh}
-		&.star--7{left:7vw;opacity:.9031742649;top:15vh}
-		&.star--8{left:76vw;opacity:.8409433376;top:59vh}
-		&.star--9{left:96vw;opacity:.608885048;top:52vh}
-		&.star--10{left:78vw;opacity:.7492249933;top:74vh}
-		&.star--11{left:26vw;opacity:.3681734654;top:40vh}
-		&.star--12{left:5vw;opacity:.7267037973;top:15vh}
-		&.star--13{left:16vw;opacity:.4067839385;top:48vh}
-		&.star--14{left:68vw;opacity:.5843930509;top:15vh}
-		&.star--15{left:15vw;opacity:.2201221047;top:53vh}
-		&.star--16{left:32vw;opacity:.6783812307;top:87vh}
-		&.star--17{left:30vw;opacity:.0783996167;top:5vh}
-		&.star--18{left:10vw;opacity:.5302191676;top:30vh}
-		&.star--19{left:83vw;opacity:.409574775;top:22vh}
-		&.star--20{left:62vw;opacity:.5129851018;top:20vh}
+		// originally had a for loop and it generated this and i liked it:
+		&.star--1{ left: 26vw;	opacity: .31; top: 53vh;	animation-delay: 93ms;	animation-duration:6s; }
+		&.star--2{ left: 11vw;	opacity: .86; top: 8vh;		animation-delay: 11ms; 	animation-duration:8s; }
+		&.star--3{ left: 89vw;	opacity: .25; top: 34vh;	animation-delay: 157ms; animation-duration:10s; }
+		&.star--4{ left: 74vw;	opacity: .25; top: 64vh;	animation-delay: 241ms; animation-duration:7s; }
+		&.star--5{ left: 32vw;	opacity: .95; top: 67vh;	animation-delay: 102ms; animation-duration:8s; }
+		&.star--6{ left: 86vw;	opacity: .72; top: 6vh;		animation-delay: 274ms; animation-duration:6s; }
+		&.star--7{ left: 7vw;		opacity: .90; top: 15vh;	animation-delay: 198ms; animation-duration:10s; }
+		&.star--8{ left: 76vw;	opacity: .84; top: 59vh;	animation-delay: 72ms;	animation-duration:7s; }
+		&.star--9{ left: 96vw;	opacity: .60; top: 52vh;	animation-delay: 34ms; 	animation-duration:10s; }
+		&.star--10{ left: 78vw;	opacity: .74; top: 74vh;	animation-delay: 380ms; animation-duration:6s; }
+		&.star--11{ left: 26vw;	opacity: .36; top: 40vh;	animation-delay: 398ms; animation-duration:6s; }
+		&.star--12{ left: 5vw;	opacity: .72; top: 15vh;	animation-delay: 228ms; animation-duration:8s; }
+		&.star--13{ left: 16vw;	opacity: .40; top: 48vh;	animation-delay: 101ms; animation-duration:8s; }
+		&.star--14{ left: 68vw;	opacity: .58; top: 15vh;	animation-delay: 213ms; animation-duration:7s; }
+		&.star--15{ left: 15vw;	opacity: .22; top: 53vh;	animation-delay: 228ms; animation-duration:10s; }
+		&.star--16{ left: 32vw;	opacity: .67; top: 87vh;	animation-delay: 330ms; animation-duration:10s; }
+		&.star--17{ left: 30vw;	opacity: .07; top: 5vh;		animation-delay: 137ms; animation-duration:7s; }
+		&.star--18{ left: 10vw;	opacity: .53; top: 30vh;	animation-delay: 58ms; 	animation-duration:8s; }
+		&.star--19{ left: 83vw;	opacity: .40; top: 22vh;	animation-delay: 259ms; animation-duration:10s; }
+		&.star--20{ left: 62vw;	opacity: .51; top: 20vh;	animation-delay: 139ms; animation-duration:9s; }
 	}
 }

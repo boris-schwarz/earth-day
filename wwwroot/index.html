@@ -2,20 +2,13 @@
 <!DOCTYPE html>
 <!--
 	TODO
-	[x] add whole earth map with vertical scrolling animation -- incompatible with time based happenings
 	[ ] add 16x16 characters and icons
-	[ ] add animations for happenings
-	[ ] add better action-button text for action descriptions
 	[ ] write texts
-	[ ] always show action buttons at the bottom of a message (add padding-bottom to message and position button absolute)
+	[ ] better positioning for action buttons on mobile and desktop that takes little space
+	[x] add animations for happenings
 	[x] properly time game-over animation
 	[x] increase general font size
 	[x] add <b> to action descriptions
-
-	EVALUATE
-	- add some checkboxes for each goal, e.g. brown squares to the earth when deforestation happens
-	- checking all those will be the goal instead of hitting the critical snackbar button
-	- as the game continues, the amount of goal-checkboxes will increase while the time stays the same
 -->
 <html lang="en">
 	<head>
@@ -103,6 +96,10 @@
 				<input type="checkbox" autocomplete="off" id="state_overpopulation_solved_6">
 				<input type="checkbox" autocomplete="off" id="state_overpopulation_solved_7">
 				<input type="checkbox" autocomplete="off" id="state_overpopulation_solved_8"> solved
+
+				<hr>
+				[win]
+				<input type="checkbox" autocomplete="off" id="state_win_happening"> win
 			</div>
 
 			<!-- canvas -->
@@ -165,9 +162,9 @@
 							<div class="cloud--6"></div>
 						</div>
 						<div class="happenings">
-							<label for="state_deforestation_solved_1" class="happening__forest--1"></label>
-							<label for="state_deforestation_solved_2" class="happening__forest--2"></label>
-							<label for="state_deforestation_solved_3" class="happening__forest--3"></label>
+							<label for="state_deforestation_solved_1" class="happening__deforestation--1"></label>
+							<label for="state_deforestation_solved_2" class="happening__deforestation--2"></label>
+							<label for="state_deforestation_solved_3" class="happening__deforestation--3"></label>
 
 							<label for="state_oilspill_solved_1" class="happening__oilspill--1"></label>
 							<label for="state_oilspill_solved_2" class="happening__oilspill--2"></label>
@@ -260,6 +257,61 @@
 							<a href="./" class="restart">Re-start game</a>
 						</div>
 					</div>
+					<div class="action__plasticwaste">
+						<div class="action--description">
+							<h2>plasticwaste</h2>
+							<p>An oil spill happened, quickly! There's little time to prevent the oil carpet from spreading and saving as many animals as possible.</p>
+							<div class="action__progress"></div>
+						</div>
+						<div class="action--failed">
+							<h2>That took too long!</h2>
+							<p>Unfortunately, Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque culpa minima repellat repudiandae aliquam quibusdam ea, maxime quod, illum non maiores id eos architecto reprehenderit, dolor accusantium impedit blanditiis hic.</p>
+							<a href="./" class="restart">Re-start game</a>
+						</div>
+					</div>
+					<div class="action__overfishing">
+						<div class="action--description">
+							<h2>overfishing</h2>
+							<p>An oil spill happened, quickly! There's little time to prevent the oil carpet from spreading and saving as many animals as possible.</p>
+							<div class="action__progress"></div>
+						</div>
+						<div class="action--failed">
+							<h2>That took too long!</h2>
+							<p>Unfortunately, Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque culpa minima repellat repudiandae aliquam quibusdam ea, maxime quod, illum non maiores id eos architecto reprehenderit, dolor accusantium impedit blanditiis hic.</p>
+							<a href="./" class="restart">Re-start game</a>
+						</div>
+					</div>
+					<div class="action__greenhousegases">
+						<div class="action--description">
+							<h2>greenhousegases</h2>
+							<p>An oil spill happened, quickly! There's little time to prevent the oil carpet from spreading and saving as many animals as possible.</p>
+							<div class="action__progress"></div>
+						</div>
+						<div class="action--failed">
+							<h2>That took too long!</h2>
+							<p>Unfortunately, Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque culpa minima repellat repudiandae aliquam quibusdam ea, maxime quod, illum non maiores id eos architecto reprehenderit, dolor accusantium impedit blanditiis hic.</p>
+							<a href="./" class="restart">Re-start game</a>
+						</div>
+					</div>
+					<div class="action__overpopulation">
+						<div class="action--description">
+							<h2>overpopulation</h2>
+							<p>An oil spill happened, quickly! There's little time to prevent the oil carpet from spreading and saving as many animals as possible.</p>
+							<div class="action__progress"></div>
+						</div>
+						<div class="action--failed">
+							<h2>That took too long!</h2>
+							<p>Unfortunately, Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque culpa minima repellat repudiandae aliquam quibusdam ea, maxime quod, illum non maiores id eos architecto reprehenderit, dolor accusantium impedit blanditiis hic.</p>
+							<a href="./" class="restart">Re-start game</a>
+						</div>
+					</div>
+					<div class="action__win">
+						<div class="action--description">
+							<h2>You won!</h2>
+						<p>You faced all the challenges and helped the human in front of the screen remembering taking care of our planet!</p>
+						<a href="./" class="restart">Play again</a>
+						</div>
+					</div>
 				</div>
 
 				<!-- hud: notifications -->
@@ -270,9 +322,29 @@
 						<label for="state_oilspill_happening">Continue</label>
 					</div>
 					<div class="notification__oilspill">
-						<h2>TODO!</h2>
+						<h2>oilspill solved</h2>
 						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis minima quos cumque odit voluptatum, doloribus sint maiores itaque obcaecati. Tenetur ab eos debitis officia, voluptates inventore blanditiis explicabo ipsum mollitia.</p>
 						<label for="state_plasticwaste_happening">Continue</label>
+					</div>
+					<div class="notification__plasticwaste">
+						<h2>plasticwaste solved</h2>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis minima quos cumque odit voluptatum, doloribus sint maiores itaque obcaecati. Tenetur ab eos debitis officia, voluptates inventore blanditiis explicabo ipsum mollitia.</p>
+						<label for="state_overfishing_happening">Continue</label>
+					</div>
+					<div class="notification__overfishing">
+						<h2>overfishing solved</h2>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis minima quos cumque odit voluptatum, doloribus sint maiores itaque obcaecati. Tenetur ab eos debitis officia, voluptates inventore blanditiis explicabo ipsum mollitia.</p>
+						<label for="state_greenhousegases_happening">Continue</label>
+					</div>
+					<div class="notification__greenhousegases">
+						<h2>greenhousegases solved</h2>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis minima quos cumque odit voluptatum, doloribus sint maiores itaque obcaecati. Tenetur ab eos debitis officia, voluptates inventore blanditiis explicabo ipsum mollitia.</p>
+						<label for="state_overpopulation_happening">Continue</label>
+					</div>
+					<div class="notification__overpopulation">
+						<h2>overpopulation solved</h2>
+						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis minima quos cumque odit voluptatum, doloribus sint maiores itaque obcaecati. Tenetur ab eos debitis officia, voluptates inventore blanditiis explicabo ipsum mollitia.</p>
+						<label for="state_win_happening">Continue</label>
 					</div>
 				</div>
 
