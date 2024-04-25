@@ -50,7 +50,7 @@
 )) {
 	.hud__actions .action__intro {
 		animation-fill-mode: forwards;
-		animation-duration: 1s;
+		animation-duration: 0.5s;
 		animation-name: persistent-snackbar;
 	}
 }
@@ -106,7 +106,7 @@
 /* won the game */
 .state:has(.state__bool [id="state_win_happening"]:checked) {
 	.hud__actions .action__win {
-		animation-duration: 1s;
+		animation-duration: 0.5s;
 		animation-name: persistent-snackbar;
 		animation-fill-mode: forwards;
 	}

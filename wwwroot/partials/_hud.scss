@@ -88,24 +88,15 @@
 			pointer-events: all;
 			.action--description,
 			.action--failed {
-				/* display: flex;
-				flex-wrap: wrap; */
 				min-width: 100%;
-				/* > h2 {
-					flex-grow: 2;
-					margin-top: 8px;
-					order: 1;
-				}
-				> label,
-				> a.restart {
-					clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%);
-					flex-grow: 0;
-					order: 2;
+				padding: 0.5rem;
+				> h2 {
+					display: inline-block;
+					text-transform: uppercase;
 				}
 				> p {
-					order: 3;
-					width: 100%;;
-				} */
+					display: inline;
+				}
 			}
 			.action__progress {
 				animation-duration: 15s;
@@ -129,12 +120,20 @@
 		> [class*="notification__"] {
 			@include notification-box;
 			animation-direction: normal;
-			animation-duration: 1s;
+			animation-duration: 0.5s;
 			animation-fill-mode: forwards;
 			animation-iteration-count: 1;
 			animation-timing-function: linear;
 			background-color: var(--color-blue-dark);
+			padding: 0.5rem;
 			pointer-events: all;
+			> h2 {
+				display: inline-block;
+				text-transform: uppercase;
+			}
+			> p {
+				display: inline;
+			}
 		}
 	}
 
@@ -142,20 +141,21 @@
 	label,
 	a.restart {
 		background-color: var(--color-green);
+		clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%);
 		color: var(--color-black);
 		cursor: pointer;
 		display: inline-block;
-		padding: 1rem 1.5rem;
+		padding: 0 2rem;
 		text-decoration: none;
 		&:hover {
 			background-color: var(--color-green-dark);
 		}
 	}
-	a.restart {
+	/* a.restart {
 		position: absolute;
     right: 0;
     top: 50%;
-	}
+	} */
 
 	b {
 		color: var(--color-green);
