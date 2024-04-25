@@ -28,10 +28,10 @@
 /* persistent snackbar */
 @keyframes persistent-snackbar {
 	from {
-		transform: translate(-50%, 100%);
+		transform: translateY(100%);
 	}
 	to {
-		transform: translate(-50%, 0);
+		transform: translateY(0);
 	}
 }
 
@@ -40,29 +40,29 @@
 @keyframes critical-snackbar {
 	/* snackbar hidden */
 	0% {
-		transform: translate(-50%, 100%);
+		transform: translateY(100%);
 	}
 	/* snackbar shows up */
 	3%, 65% {
-		transform: translate(-50%, 50%);
+		transform: translateY(50%);
 	}
 	/* run the countdown */
 	66% {
 		background-color: var(--color-black);
 		clip-path: inset(0 0 0 0);
-		transform: translate(-50%, 50%);
+		transform: translateY(50%);
 	}
 	/* game over initiation for immediate swap of properties */
 	67% {
 		background-color: var(--color-red);
 		clip-path: inset(50% 0 0 0);
-		transform: translate(-50%, 0);
+		transform: translateY(0);
 	}
 	/* game over animation */
 	68%, 100% {
 		background-color: var(--color-red);
 		clip-path: inset(50% 0 0 0);
-		transform: translate(-50%, 0);
+		transform: translateY(0);
 	}
 }
 
@@ -92,5 +92,16 @@
 	}
 	100% {
 		filter:	blur(1.5px);
+	}
+}
+
+
+/* robot talk */
+@keyframes robo-talk {
+	0% {
+		transform: translateX(100%) translateY(15%) rotateZ(0);
+	}
+	100% {
+		transform: translateX(0) translateY(15%) rotateZ(-10deg);
 	}
 }

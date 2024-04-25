@@ -53,6 +53,9 @@
 		animation-duration: 0.5s;
 		animation-name: persistent-snackbar;
 	}
+	.hud__robot {
+		animation-name: robo-talk;
+	}
 }
 
 
@@ -99,6 +102,9 @@
 	)) {
 		.hud__notifications .notification__#{$happening} {
 			animation-name: persistent-snackbar;
+		}
+		.hud__robot {
+			animation-name: robo-talk;
 		}
 	}
 }

@@ -24,14 +24,14 @@
 		.settings__animations {
 			background-color: var(--color-green);
 			border-radius: 50%;
-			bottom: 1vw;
+			top: 1vw;
 			display: block;
-			height: 3.1rem;
-			left: 1vw;
+			height: 2rem;
+			right: 1vw;
 			padding: 0;
 			position: fixed;
 			pointer-events: all;
-			width: 3.1rem;
+			width: 2rem;
 			[class*="icon--line--"] {
 				background-color: var(--color-black);
 				height: 2px;
@@ -65,6 +65,8 @@
 		}
 	}
 
+	@import 'hud_robot';
+
 	/* goals (hidden, enabled for debugging) */
 	.hud__goals {
 		left: 2vh;
@@ -88,6 +90,7 @@
 			pointer-events: all;
 			.action--description,
 			.action--failed {
+				box-sizing: border-box;
 				min-width: 100%;
 				padding: 0.5rem;
 				> h2 {

@@ -21,6 +21,7 @@ $happenings: (
 	--color-brown: #877666;
 	--color-red: #b30c00;
 	--color-pink: #ff08c5;
+	--color-gold: #edb200;
 }
 
 /* mixins */
@@ -37,10 +38,10 @@ $happenings: (
 
 @mixin notification-box {
 	bottom: 0;
-	left: 50%;
-	width: 75vw;
+	left: 0;
+	right: 0;
 	position: fixed;
-	transform: translate(-50%, 100%);
+	transform: translateY(100%);
 	h2 {
 		margin: 0;
 	}

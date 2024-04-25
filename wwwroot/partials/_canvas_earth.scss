@@ -3,14 +3,14 @@
 	justify-content: center;
 	align-items: start;
 	.earth {
-		$earth-size: 60vmin;
+		$earth-size: 75vmin;
 		aspect-ratio: 1/1;
 		background-color: var(--color-blue);
 		border-radius: 50%;
 		clip-path: circle(calc($earth-size / 2) at center);
 		overflow: clip;
 		position: relative;
-		transform: translateY(15vmin);
+		transform: translateY(10vmin);
 		width: $earth-size;
 		.countries {
 			display: grid;
