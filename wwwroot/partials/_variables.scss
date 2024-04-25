@@ -37,7 +37,7 @@ $happenings: (
 @mixin notification-box {
 	bottom: 0;
 	left: 50%;
-	max-width: 50vw;
+	width: 75vw;
 	position: fixed;
 	transform: translate(-50%, 100%);
 	h2 {

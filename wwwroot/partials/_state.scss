@@ -1,6 +1,8 @@
 .state {
 	@include full-screen;
 	> .state__bool {
+		/* display: none;
+		pointer-events: none; */
 		font-size: 12px;
 		position: fixed;
 		z-index: 99999;
@@ -49,6 +51,11 @@
 			.happenings {
 				[class^="happening__#{$happening}--"] {
 					animation-name: happening-occurs;
+					@for $i from 1 through $amount {
+						&.happening__#{$happening}--#{$i} {
+							animation-delay: (120 * $i) + ms;
+						}
+					}
 				}
 			}
 		}
