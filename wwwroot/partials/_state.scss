@@ -3,7 +3,7 @@
 	> .state__bool {
 		display: none;
 		pointer-events: none;
-		&.debug {
+		/* &.debug {
 			display: block;
 			font-size: 13px;
 			line-height: 13px;
@@ -19,7 +19,7 @@
 				vertical-align: bottom;
 				width: 13px;
 			}
-		}
+		} */
 	}
 }
 
@@ -117,20 +117,3 @@
 		animation-fill-mode: forwards;
 	}
 }
-
-
-
-
-
-/* oilspill happening */
-/* .state:has(.state__bool [id="state_oilspill_happening"]:checked):has(
-	input[id^="state_oilspill_solved_"]:not(:checked)
-) {
-	.hud__actions .action__oilspill {
-		animation-fill-mode: forwards;
-		animation-name: critical-snackbar;
-	}
-	.hud__actions .action__oilspill .action__progress {
-		animation-name: snackbar-progress;
-	}
-} */
