@@ -3,6 +3,7 @@
 	@include full-screen;
 	display: block;
 	left: 0;
+	pointer-events: none;
 	position: fixed;
 	top: 0;
 
@@ -13,6 +14,7 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		pointer-events: all;
 	}
 
 	/* settings */
@@ -135,88 +137,14 @@
 			background-color: var(--color-green-dark);
 		}
 	}
-}
+	a.restart {
+		position: absolute;
+    right: 0;
+    top: 50%;
+	}
 
-/* snackbar animations */
-@keyframes persistent-snackbar {
-	from {
-		transform: translate(-50%, 100%);
-	}
-	to {
-		transform: translate(-50%, 0);
-	}
-}
-
-@keyframes critical-snackbar {
-	0% {
-		transform: translate(-50%, 100%);
-	}
-	6%, 78% {
-		transform: translate(-50%, 50%);
-	}
-	79% {
-		clip-path: inset(0 0 0 0);
-		transform: translate(-50%, 50%);
-	}
-	80% {
-		background-color: var(--color-brown);
-		clip-path: inset(50% 0 0 0);
-		transform: translate(-50%, 0);
-	}
-	81%, 100% {
-		background-color: var(--color-red);
-		clip-path: inset(50% 0 0 0);
-		transform: translate(-50%, 0);
-	}
-}
-
-@keyframes snackbar-progress {
-	from { width: 0%; }
-	to { width: 100%; }
-}
-
-
-/* state: settings */
-.state:has(.state__bool [id="state_animations"]:not(:checked)) {
-	.settings__animations {
-		background-color: var(--color-black);
-		[class*="icon--"] {
-			background-color: var(--color-white);
-		}
-		.icon--disabled {
-			display: block;
-		}
-	}
-}
-
-/* state: game running */
-.state:has(.state__bool [id="state_intro"]:checked) {
-	.hud__menu {
-		display: none;
-	}
-}
-
-/* intro */
-.state:has(.state__bool [id="state_intro"]:checked):not(:has(input[id="state_deforestation_happening"]:checked)) {
-	.hud__actions .action__intro {
-		animation-fill-mode: forwards;
-		animation-duration: 1s;
-		animation-name: persistent-snackbar;
-	}
-}
-
-/* deforestation */
-.state:has(.state__bool [id="state_deforestation_happening"]:checked):not(:has(input[id="state_deforestation_solved"]:checked)) {
-	.hud__actions .action__deforestation {
-		animation-fill-mode: forwards;
-		animation-name: critical-snackbar;
-	}
-	.hud__actions .action__deforestation .action__progress {
-		animation-name: snackbar-progress;
-	}
-}
-.state:has(.state__bool [id="state_deforestation_happening"]:checked):has(input[id="state_deforestation_solved"]:checked) {
-	.hud__notifications .notification__deforestation {
-		animation-name: persistent-snackbar;
+	b {
+		color: var(--color-green);
+		font-weight: 900;
 	}
 }

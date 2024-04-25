@@ -4,9 +4,12 @@ html, body {
 	overflow: hidden;
 	padding: 0;
 }
+body {
+	font-size: 110%;
+}
 * {
 	color: var(--color-white);
-	font-family: "VT323", monospace;
+	font-family: monospace;
   font-style: normal;
   font-weight: 400;
 	text-transform: uppercase;

@@ -34,13 +34,4 @@
 		&.star--19{left:83vw;opacity:.409574775;top:22vh}
 		&.star--20{left:62vw;opacity:.5129851018;top:20vh}
 	}
-
-	@keyframes star-shine {
-		0% {
-			filter:	blur(0px);
-		}
-		100% {
-			filter:	blur(2.5px);
-		}
-	}
 }

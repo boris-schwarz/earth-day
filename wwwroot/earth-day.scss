@@ -1,5 +1,14 @@
 @import 'partials/variables';
+@import 'partials/animations';
 @import 'partials/reset';
 @import 'partials/state';
 @import 'partials/canvas';
 @import 'partials/hud';
+
+/* debug */
+/* .canvas__earth {
+	display: flex !important;
+}
+.hud {
+	display: none !important;
+} */

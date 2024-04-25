@@ -1,0 +1,96 @@
+/* happening occurs */
+@keyframes happening-occurs {
+	0% { transform: scale(0); }
+	1% { transform: scale(1); }
+	5% { transform: scale(0.75); }
+	10% { transform: scale(1); }
+	15% { transform: scale(0.75); }
+	20% { transform: scale(1); }
+	25% { transform: scale(0.75); }
+	30% { transform: scale(1); }
+	35% { transform: scale(0.75); }
+	40% { transform: scale(1); }
+	45% { transform: scale(0.75); }
+	50% { transform: scale(1); }
+	55% { transform: scale(0.75); }
+	60% { transform: scale(1); }
+	65% { transform: scale(0.75); }
+	70% { transform: scale(1); }
+	75% { transform: scale(0.75); }
+	80% { transform: scale(1.25); }
+	85% { transform: scale(0.75); }
+	90% { transform: scale(1.25); }
+	95% { transform: scale(0.75); }
+	100% { transform: scale(1.25); }
+}
+
+
+/* persistent snackbar */
+@keyframes persistent-snackbar {
+	from {
+		transform: translate(-50%, 100%);
+	}
+	to {
+		transform: translate(-50%, 0);
+	}
+}
+
+
+/* critical snackbar */
+@keyframes critical-snackbar {
+	/* snackbar hidden */
+	0% {
+		transform: translate(-50%, 100%);
+	}
+	/* snackbar shows up */
+	6%, 65% {
+		transform: translate(-50%, 50%);
+	}
+	/* run the countdown */
+	66% {
+		background-color: var(--color-black);
+		clip-path: inset(0 0 0 0);
+		transform: translate(-50%, 50%);
+	}
+	/* game over initiation for immediate swap of properties */
+	67% {
+		background-color: var(--color-red);
+		clip-path: inset(50% 0 0 0);
+		transform: translate(-50%, 0);
+	}
+	/* game over animation */
+	68%, 100% {
+		background-color: var(--color-red);
+		clip-path: inset(50% 0 0 0);
+		transform: translate(-50%, 0);
+	}
+}
+
+
+/* snackbar progress bar */
+@keyframes snackbar-progress {
+	0% { width: 0%; }
+	66% { width: 100%; }
+}
+
+
+/* clouds moving */
+@keyframes cloud-computing {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-100%);
+	}
+}
+
+
+/* star flickering */
+@keyframes star-shine {
+	0% {
+		filter:	blur(0px);
+	}
+	100% {
+		filter:	blur(2.5px);
+	}
+}

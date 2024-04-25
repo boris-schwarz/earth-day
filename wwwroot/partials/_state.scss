@@ -1,7 +1,99 @@
 .state {
 	@include full-screen;
 	> .state__bool {
+		font-size: 12px;
 		position: fixed;
 		z-index: 99999;
+	}
+}
+
+
+/* state: settings */
+.state:has(.state__bool [id="state_animations"]:not(:checked)) {
+	.settings__animations {
+		background-color: var(--color-black);
+		[class*="icon--"] {
+			background-color: var(--color-white);
+		}
+		.icon--disabled {
+			display: block;
+		}
+	}
+}
+
+/* state: game running */
+.state:has(.state__bool [id="state_intro"]:checked) {
+	.hud__menu {
+		display: none;
+	}
+}
+
+/* show intro */
+.state:has(.state__bool [id="state_intro"]:checked):not(:has(
+	input[id="state_deforestation_happening"]:checked
+)) {
+	.hud__actions .action__intro {
+		animation-fill-mode: forwards;
+		animation-duration: 1s;
+		animation-name: persistent-snackbar;
+	}
+}
+
+/* deforestation happening */
+.state:has(.state__bool [id="state_deforestation_happening"]:checked):has(
+	input[id^="state_deforestation_solved_"]:not(:checked)
+) {
+	.canvas__earth {
+		.happenings {
+			[class^="happening__forest--"] {
+				animation-name: happening-occurs;
+			}
+		}
+	}
+	.hud__actions .action__deforestation {
+		animation-fill-mode: forwards;
+		animation-name: critical-snackbar;
+	}
+	.hud__actions .action__deforestation .action__progress {
+		animation-name: snackbar-progress;
+	}
+}
+
+/* deforestatoin solving */
+.state:has(.state__bool [id="state_deforestation_happening"]:checked):has(
+	input[id="state_deforestation_solved_1"]:checked
+) { label[for="state_deforestation_solved_1"] { display: none; } }
+.state:has(.state__bool [id="state_deforestation_happening"]:checked):has(
+	input[id="state_deforestation_solved_2"]:checked
+) { label[for="state_deforestation_solved_2"] { display: none; } }
+.state:has(.state__bool [id="state_deforestation_happening"]:checked):has(
+	input[id="state_deforestation_solved_3"]:checked
+) { label[for="state_deforestation_solved_3"] { display: none; } }
+
+/* deforestation solved */
+.state:has(.state__bool [id="state_deforestation_happening"]:checked):has(
+	input[id="state_deforestation_solved_1"]:checked
+):has(
+	input[id="state_deforestation_solved_2"]:checked
+):has(
+	input[id="state_deforestation_solved_3"]:checked
+):not(:has(
+	input[id="state_oilspill_happening"]:checked
+)) {
+	.hud__notifications .notification__deforestation {
+		animation-name: persistent-snackbar;
+	}
+}
+
+/* oilspill happening */
+.state:has(.state__bool [id="state_oilspill_happening"]:checked):has(
+	input[id^="state_oilspill_solved_"]:not(:checked)
+) {
+	.hud__actions .action__oilspill {
+		animation-fill-mode: forwards;
+		animation-name: critical-snackbar;
+	}
+	.hud__actions .action__oilspill .action__progress {
+		animation-name: snackbar-progress;
 	}
 }
